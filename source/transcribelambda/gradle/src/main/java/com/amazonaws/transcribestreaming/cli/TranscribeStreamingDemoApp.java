@@ -65,7 +65,7 @@ public class TranscribeStreamingDemoApp {
         Gson gson = new Gson();
         ResponseObject output;
 
-        // @see https://docs.aws.amazon.com/es_es/transcribe/latest/dg/API_StartTranscriptionJob.html#API_StartTranscriptionJob_RequestSyntax
+        // @see https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html#API_StartTranscriptionJob_RequestSyntax
         // @todo: get the input language code from argument
         String inputLanguageCode = LanguageCode.EN_US.toString();
 
@@ -77,11 +77,10 @@ public class TranscribeStreamingDemoApp {
             }
 
             // @todo: perform translation in other languages
+
+            String printout = gson.toJson(output);
+            System.out.println(printout);
         }
-
-        String printout = gson.toJson(output);
-        System.out.println(printout);
-
     }
 
     enum JobType {
